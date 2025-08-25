@@ -1,30 +1,31 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue';
+import Day02 from './components/day02_20250825/Day02.vue';
+
+const activeVueComp = ref('Day02');
+const pages = { Day02 };
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+	<div>
+		<button @click="activeVueComp = 'Day02'">Vue Directives</button>
+
+		<div id="vue_comp">
+			<component :is="pages[activeVueComp]"></component>
+		</div>
+	</div>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+button {
+	margin: 5px;
+	filter: drop-shadow(0 0 1.5px #112233);
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+#vue_comp {
+	margin-top: 20px;
+	padding: 10px;
+	border: 1px solid orange;
+	border-radius: 10px;
 }
 </style>
