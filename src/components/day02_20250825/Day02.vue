@@ -1,10 +1,9 @@
 <template>
-	<div>
+	<div id="wrapper">
 		<p>Vue 2일차 교육 내용</p>
 		<button @click="activeComp = 'Ex01'">bind</button>
 		<button @click="activeComp = 'Ex02'">if</button>
 		<button @click="activeComp = 'Ex03'">show</button>
-		<button @click="activeComp = 'Ex04'">for</button>
 		<hr />
 		<div id="comp_view">
 			<KeepAlive>
@@ -20,13 +19,16 @@ import { KeepAlive, ref } from 'vue';
 import Ex01 from './Ex01.vue';
 import Ex02 from './Ex02.vue';
 import Ex03 from './Ex03.vue';
-import Ex04 from './Ex04.vue';
 
-const pages = { Ex01, Ex02, Ex03, Ex04 };
+const pages = { Ex01, Ex02, Ex03 };
 const activeComp = ref('Ex01');
 </script>
 
 <style scoped>
+#wrapper {
+	height: 100%;
+}
+
 button:not(:last-child) {
 	margin-right: 10px;
 }
