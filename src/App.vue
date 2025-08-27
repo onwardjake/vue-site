@@ -2,15 +2,17 @@
 import { ref } from 'vue';
 import Day02 from './components/day02_20250825/Day02.vue';
 import Day03 from './components/day03_20250826/Day03.vue';
+import Day04 from './components/day04_20250827/Day04.vue';
 
 const activeVueComp = ref('Day02');
-const pages = { Day02, Day03 };
+const pages = { Day02, Day03, Day04 };
 </script>
 
 <template>
 	<div>
-		<button @click="activeVueComp = 'Day02'">Directives</button>
-		<button @click="activeVueComp = 'Day03'">Events</button>
+		<button @click="activeVueComp = 'Day02'">bind/if/show</button>
+		<button @click="activeVueComp = 'Day03'">for/on(events)</button>
+		<button @click="activeVueComp = 'Day04'">methods</button>
 
 		<div id="vue_comp">
 			<KeepAlive>
