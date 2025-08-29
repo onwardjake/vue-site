@@ -1,7 +1,13 @@
 <template>
 	<div id="wrapper">
 		<p>Vue 2일차 교육 내용</p>
-		<button @click="activeComp = 'Ex01'">bind</button>
+		<nav>
+			<router-link to="/day02/ex01">bind</router-link> |
+			<router-link to="/day02/ex02">if</router-link> |
+			<router-link to="/day02/ex03">show</router-link>
+		</nav>
+		<router-view />
+		<!-- <button @click="activeComp = 'Ex01'">bind</button>
 		<button @click="activeComp = 'Ex02'">if</button>
 		<button @click="activeComp = 'Ex03'">show</button>
 		<hr />
@@ -9,19 +15,19 @@
 			<KeepAlive>
 				<component :is="pages[activeComp]"></component>
 			</KeepAlive>
-		</div>
+		</div> -->
 	</div>
 </template>
 
 <script setup>
-import { KeepAlive, ref } from 'vue';
+// import { KeepAlive, ref } from 'vue';
 
-import Ex01 from './Ex01.vue';
-import Ex02 from './Ex02.vue';
-import Ex03 from './Ex03.vue';
+// import Ex01 from './Ex01.vue';
+// import Ex02 from './Ex02.vue';
+// import Ex03 from './Ex03.vue';
 
-const pages = { Ex01, Ex02, Ex03 };
-const activeComp = ref('Ex01');
+// const pages = { Ex01, Ex02, Ex03 };
+// const activeComp = ref('Ex01');
 </script>
 
 <style scoped>
